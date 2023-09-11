@@ -101,9 +101,6 @@ _QT_METADATA = {
     'QtMultimediaWidgets':
         VersionedMetadata(),
 
-    'QtMultimediaQuick_p':
-        VersionedMetadata(),
-
     'QtNetwork':
         VersionedMetadata(),
 
