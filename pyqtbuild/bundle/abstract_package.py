@@ -42,10 +42,10 @@ class AbstractPackage(ABC):
 
         # Get the Qt version.
         self.qt_version = self._parse_version(
-                os.path.basename(os.path.dirname(self._qt_dir)))
+                os.path.basename(self._qt_dir))
 
         # We don't support anything older that the current LTS release.
-        if self.qt_version < (5, 15, 0):
+        if self.qt_version < (5, 6, 0):
             raise UserException(
                     "Version of Qt older than v5.15 are not supported")
 
@@ -60,7 +60,7 @@ class AbstractPackage(ABC):
             min_qt_version = (self._version[0], self._version[1], 0)
 
             # Check the versions are compatible.
-            if self.qt_version < min_qt_version:
+            if self.qt_version < (5, 6, 3):
                 raise UserException(
                         "The version of Qt being bundled is too old")
         else:
