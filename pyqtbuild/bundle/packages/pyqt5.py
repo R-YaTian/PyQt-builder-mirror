@@ -41,6 +41,11 @@ _QT_METADATA = {
     'QtAndroidExtras':
         VersionedMetadata(),
 
+    'Enginio':
+        VersionedMetadata(qml=True,
+            other_lib_deps={
+                'win': ('Enginio.dll', 'Qt5CLucene.dll', 'Qt5Concurrent.dll',)}),
+
     'QtBluetooth':
         VersionedMetadata(
             lib_deps={
@@ -56,15 +61,17 @@ _QT_METADATA = {
                 'win': ('icudt*.dll', 'icuin*.dll', 'icuuc*.dll')},
             translations=('qt_help', 'qtbase', 'qtconnectivity',
                 'qtdeclarative', 'qtlocation', 'qtmultimedia',
-                'qtquickcontrols', 'qtscript', 'qtserialport', 'qtwebsockets',
-                'qtxmlpatterns', 'qt_', 'xcbglintegrations'),
-            excluded_plugins=('canbus', 'designer', 'qmltooling')),
+                'qtquickcontrols', 'qtserialport', 'qtwebsockets',
+                'qtxmlpatterns', 'qt_', 'xcbglintegrations', 'qtquick1', 'qtconfig'),
+            excluded_plugins=('canbus', 'qmltooling')),
 
     'QtDBus':
         VersionedMetadata(),
 
     'QtDesigner':
-        VersionedMetadata(),
+        VersionedMetadata(
+            other_lib_deps={
+                'win': ('Qt5DesignerComponents.dll', )}),
 
     'QtGui':
         VersionedMetadata(
@@ -87,9 +94,14 @@ _QT_METADATA = {
     'QtMultimedia':
         VersionedMetadata(
             lib_deps={'linux': ('QtMultimediaGstTools', )},
-            qml=True, qml_names=('QtAudioEngine', 'QtMultimedia')),
+            qml=True, qml_names=('QtAudioEngine', 'QtMultimedia'),
+            other_lib_deps={
+                'win': ('Qt5MultimediaQuick_p.dll', )}),
 
     'QtMultimediaWidgets':
+        VersionedMetadata(),
+
+    'QtMultimediaQuick_p':
         VersionedMetadata(),
 
     'QtNetwork':
@@ -120,8 +132,7 @@ _QT_METADATA = {
             lib_deps={'': ('QtQuickControls2', 'QtQuickParticles',
                     'QtQuickShapes', 'QtQuickTemplates2', 'QtQuickTest')},
             qml=True,
-            qml_names=('QtCanvas3D', 'QtGraphicalEffects', 'QtQuick',
-                    'QtQuick.2')),
+            qml_names=('QtCanvas3D', 'QtGraphicalEffects', 'QtQuick')),
 
     'QtQuick3D':
         VersionedMetadata(
@@ -167,7 +178,7 @@ _QT_METADATA = {
         VersionedMetadata(),
 
     'QtWinExtras':
-        VersionedMetadata(),
+        VersionedMetadata(qml=True),
 
     'QtX11Extras':
         VersionedMetadata(),
