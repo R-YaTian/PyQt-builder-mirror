@@ -129,7 +129,8 @@ _QT_METADATA = {
             lib_deps={'': ('QtQuickControls2', 'QtQuickParticles',
                     'QtQuickShapes', 'QtQuickTemplates2', 'QtQuickTest')},
             qml=True,
-            qml_names=('QtCanvas3D', 'QtGraphicalEffects', 'QtQuick')),
+            qml_names=('QtCanvas3D', 'QtGraphicalEffects', 'QtQuick',
+                    'QtQuick.2')),
 
     'QtQuick3D':
         VersionedMetadata(
